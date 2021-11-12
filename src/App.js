@@ -1,19 +1,17 @@
 import React, {useState} from "react";
 import { Route, Link } from "react-router-dom";
 
-import Pizza from "./components/pizza-form";
+import Form from "./components/pizza-form";
 
 const initialEntries = {
-  itemName: 'Jessy-M',
-  age:24,
-  posts: []
-
+ entires:'',
+ size:'',
+ checked:false,
 }
 
 
 const App = () => {
-
-  const [entries, setEntries] = useState(initialEntries);
+const [entries, setEntries] = useState(initialEntries);
 
   return (
     <>
@@ -24,10 +22,13 @@ const App = () => {
         <Link to='/Pizza'>Order-Pizza</Link>
       </nav>
       <Route path='/Pizza'>
-        <Pizza entries={entries} />
+        <Form entries={entries} />
       </Route>
       </div>
-      <p>You can remove this code and create your own header</p>
+      <div>
+      <p>Your favorite food delivered while coding</p>
+      <button>Pizza?</button>
+      </div>
     </>
   );
 };
